@@ -1,0 +1,539 @@
+/*
+ * Font Import - Poppins
+ * Only loading essential weights to improve performance:
+ * - Regular (400) for body text
+ * - Light (300) for secondary text
+ * - Medium (500) for emphasis
+ * - Bold (700) for headings
+ *
+ * Using font-display: swap to ensure text remains visible during font loading
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap&font-display=swap');
+
+
+/* Define font family with appropriate fallbacks */
+/* light mode */
+:root {
+    --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --bg-dark: oklch(0.92 0.03 251);
+    --bg: oklch(0.96 0.03 251);
+    --bg-light: oklch(1 0.03 251);
+    --text: oklch(0.15 0.06 251);
+    --text-muted: oklch(40.16% 0.01847 251.438);
+    --highlight: oklch(1 0.06 251);
+    --border: oklch(0.6 0.06 251);
+    --border-muted: oklch(0.7 0.06 251);
+    --primary: oklch(41.941% 0.21781 272.706);
+    --secondary: oklch(38.57% 0.00135 198.887);
+    --danger: oklch(0.5 0.06 30);
+    --warning: oklch(57.062% 0.15602 248.643);
+    --text-second: oklch(100% 0.00011 271.152);
+    --info: oklch(50.79% 0.23096 271.79);
+}
+
+
+
+/* Dark mode - Applied when .dark class is present on html/body */
+.dark {
+    /* Inform browsers about dark color scheme for better integration */
+    color-scheme: dark;
+
+    /* Background colors - from darkest to lightest */
+    --bg-dark: oklch(0.1 0.03 251);
+    /* Darkest background (e.g., modals, cards) */
+    --bg: oklch(0.15 0.03 251);
+    /* Main background */
+    --bg-light: oklch(0.2 0.03 251);
+    /* Lighter background (e.g., hover states) */
+
+    /* Text colors */
+    --text: oklch(0.96 0.06 251);
+    /* Primary text */
+    --text-muted: oklch(0.76 0.06 251);
+    /* Secondary text */
+
+    /* UI elements */
+    --highlight: oklch(0.5 0.06 251);
+    /* Highlighted elements */
+    --border: oklch(0.4 0.06 251);
+    /* Primary borders */
+    --border-muted: oklch(0.3 0.06 251);
+    /* Secondary borders */
+
+    /* Semantic colors */
+    --primary: oklch(0.76 0.1 251);
+    /* Primary actions/elements */
+    --secondary: oklch(0.76 0.1 71);
+    /* Secondary actions/elements */
+    --danger: oklch(0.7 0.06 30);
+    /* Error states */
+    --warning: oklch(0.7 0.06 100);
+    /* Warning states */
+    --success: oklch(0.7 0.06 160);
+    /* Success states */
+    --info: oklch(0.7 0.06 260);
+    /* Information states */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+/* define HTML body colour */
+body {
+    background-color: var(--bg-light);
+}
+
+/* header styling */
+
+header {
+    height: 60px;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-light);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1000;
+}
+
+/* style logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    animation: logoEnteance 0.8s ease-out;
+}
+
+.logo>a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+/* adding logo appering animation when page is relode */
+@keyframes logoEnteance {
+    from {
+        transform: translateY(-50px);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* styling navigation bar */
+nav {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+nav>ul {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav>ul>li>a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+nav>ul>li {
+    border-radius: 5px;
+    transition: 0.3s ease;
+    padding: 5px 7px;
+    cursor: pointer;
+    animation: navLinkEntrance 0.7s ease-out;
+}
+
+/* Add navigation animation when page is relode */
+@keyframes navLinkEntrance {
+    from {
+        transform: translateX(-70px);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* add hover effect on navigation button */
+nav>ul>li:hover {
+    background-color: var(--bg);
+}
+
+
+/* main section of website is starting here. */
+
+.canvas {
+    background-color: var(--bg-light);
+
+}
+
+.hero {
+    background-color: var(--bg);
+}
+
+.hero-section {
+    max-width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+
+.hero-detial {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-detial>h1 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--secondary);
+    animation: heroslider 1s ease-out;
+}
+
+.hero-detial>h1>span {
+    color: var(--primary);
+}
+
+.hero-detial>p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    word-spacing: 2px;
+    color: var(--text-muted);
+    animation: heroslider2 1s ease-out;
+}
+
+.hero-detial>p>span {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.hero-btn {
+    background-color: var(--info);
+    padding: 6px 14px;
+    border-radius: 7px;
+    margin-top: 20px;
+    width: 90px;
+    color: var(--text-second);
+    text-decoration: none;
+    box-shadow: 0px 0px 7px var(--info);
+    animation: herobtn 0.7s ease-out;
+}
+
+/* animetion acte on hero sec main heading */
+@keyframes heroslider {
+    from {
+        transform: translatex(-70px);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translatex(0px);
+        opacity: 1;
+    }
+}
+
+/* animetion is apper hero headeing, it make dillay  */
+@keyframes heroslider2 {
+    from {
+        transform: translateX(-50px);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* animetion make heor btn apper smoothly */
+@keyframes herobtn {
+    from {
+        transform: translateY(20px);
+        opacity: 0.1;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+/* hero section image */
+
+.hero-img {
+    height: 55%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    border-radius: 90rem;
+}
+
+.hero-img>img {
+    width: 280px;
+    align-self: center;
+    justify-self: center;
+    animation: imgapper 0.8s ease-out;
+}
+
+/* img animetion */
+@keyframes imgapper {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* second section start */
+
+
+
+.second{
+    height: 55vh;
+    padding-top: 40px;
+}
+
+.about-me {
+    max-width: 85%;
+    margin: auto;
+    height: 100%;
+}
+
+.second>h2{
+    text-align: center;
+    padding: 15px;
+    font-size: 2.1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--secondary);
+}
+
+.about-me{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.about-img>img{
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+     animation: imgapper 0.8s ease-out;
+     transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.about-detail{
+    width: 60%;
+}
+
+.about-detail>p{
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    /* Animation will be triggered by JavaScript when element enters viewport */
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+/* Animation class to be applied when element is in viewport */
+.about-detail>p.animate-in {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.about-detail>h2{
+    font-size: 1.6rem;
+    margin-top: 10px;
+    font-weight: 550;
+    color: var(--secondary);
+}
+.skills{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills>span{
+    padding: 7px 13px;
+    background-color: var(--warning);
+    color: var(--text-second);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    margin-top: 12px;
+    text-align: end;
+}
+
+.skills>:nth-child(1){
+    width: 107px;
+}
+
+.skills>:nth-child(2){
+    width: 97px;
+}
+
+.skills>:nth-child(3){
+    width: 150px;
+}
+
+.skills > span > i {
+    /* Improved spacing using logical properties for better RTL support */
+    padding-inline: 0.375rem; /* 6px converted to rem for better scalability */
+    padding-block: 0.25rem;   /* Slightly reduced vertical padding for better balance */
+    
+    /* Enhanced animation with better performance and accessibility */
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.2s; /* Stagger animation for better visual flow */
+    
+    /* Performance optimization - isolate animation layer */
+    will-change: opacity;
+    
+    /* Accessibility: Respect user's motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+        opacity: 1; /* Ensure visibility when animations are disabled */
+    }
+    
+    /* Improve icon alignment and visual consistency */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Add subtle transition for interactive states */
+    transition: transform 0.2s ease-out;
+}
+
+/* Enhanced hover effect for better user feedback */
+.skills > span > i:hover {
+    transform: scale(1.1);
+}
+
+/* Focus state for keyboard navigation accessibility */
+.skills > span:focus-within > i {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Enhanced icon animation with better performance and visual appeal */
+@keyframes iconapper {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(10px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05) translateY(-2px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Fallback animation for browsers that don't support transform */
+@supports not (transform: scale(1)) {
+    @keyframes iconapper {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+}
+
+@keyframes secondslider {
+    from{
+        transform: translateX(100px);
+        opacity: 0.1;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+/* Apply the enhanced iconapper animation to all second section elements */
+.second > h2 {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.1s;
+    will-change: opacity, transform;
+}
+
+.about-img {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.3s;
+    will-change: opacity, transform;
+}
+
+.about-detail > h2 {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.5s;
+    will-change: opacity, transform;
+}
+
+.skills {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.7s;
+    will-change: opacity, transform;
+}
+
+/* Apply animation to skill spans with staggered delays */
+.skills > span:nth-child(1) {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.8s;
+    will-change: opacity, transform;
+}
+
+.skills > span:nth-child(2) {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 0.9s;
+    will-change: opacity, transform;
+}
+
+.skills > span:nth-child(3) {
+    animation: iconapper 1s ease-out forwards;
+    animation-delay: 1s;
+    will-change: opacity, transform;
+}
+
+/* Respect user's motion preferences for all animated elements */
+@media (prefers-reduced-motion: reduce) {
+    .second > h2,
+    .about-img,
+    .about-detail > h2,
+    .skills,
+    .skills > span {
+        animation: none;
+        opacity: 1;
+    }
+}

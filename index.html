@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- Critical CSS - Load with highest priority -->
+    <link rel="preload" href="style/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="style/style.css" media="all"
+        onerror="this.onerror=null;this.href='style/fallback.css';">
+
+    <!-- Responsive CSS - Load with media query for better performance -->
+    <link rel="stylesheet" href="style/responsiv.css" media="screen and (max-width: 1200px)"
+        onerror="console.error('Failed to load responsive styles');">
+
+    <!-- Fallback for browsers with JavaScript disabled -->
+    <noscript>
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/responsiv.css">
+    </noscript>
+
+    <!-- Resource hints for Font Awesome CDN -->
+    <link rel="preconnect" href="https://kit.fontawesome.com">
+    <link rel="dns-prefetch" href="https://kit.fontawesome.com">
+
+    <!-- Font Awesome Kit - loaded with defer to improve page performance -->
+    <script src="https://kit.fontawesome.com/d52796b2da.js" crossorigin="anonymous" defer onerror="loadFallbackIcons()">
+    </script>
+
+    <!-- Fallback script for Font Awesome loading failures -->
+    <script>
+        function loadFallbackIcons() {
+            console.warn('Font Awesome CDN failed to load. Using local fallback if available.');
+            // You could load a local copy or alternative icon set here
+            // Example: const fallbackLink = document.createElement('link');
+            //          fallbackLink.rel = 'stylesheet';
+            //          fallbackLink.href = 'path/to/local/fontawesome/css/all.min.css';
+            //          document.head.appendChild(fallbackLink);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Hasnain Ali</a></div>
+
+            <ul>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Rasume</a></li>
+                <li><a href="#">Explore</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="first" class="canvas hero">
+            <div class="hero-section">
+                <div class="hero-detial">
+                    <h1>hi i'm <span class="animation">Hasnain ali</span></h1>
+                    <p>I'm <span>front-end</span> Developer. I desing and build responsive websites.</p>
+                    <a href="#" class="hero-btn">Explore</a>
+                </div>
+                <div class="hero-img">
+                    <img src="assist/images/man-avatar (1).png" alt="man-avatar">
+                </div>
+            </div>
+        </section>
+        <section class="canvas second">
+            <h2 data-aos="fade-up">About me
+                <script>
+                    AOS.init();
+                </script>
+            </h2>
+            <div class="about-me">
+                <div class="about-img"><img src="assist/images/Web_Programmer_01_generated.jpg"
+                        alt="Web_Programmer_01_generated"></div>
+                <div class="about-detail">
+                    <p>I'm a passionate freelance web designer and developer with 7+ years of experience creating
+                        digital
+                        experiences that are both beautiful and functional. My approach combines aesthetic design with
+                        technical expertise to deliver websites that not only look great but perform exceptionally well.
+                        I
+                        specialize in creating responsive, user-friendly interfaces that help businesses establish a
+                        strong
+                        online presence.</p>
+                    <h2>My Skills</h2>
+                    <div class="skills">
+                        <span><i class="fa-brands fa-html5 fa-xl" style="color: #e02d00;"></i>HTML5</span>
+                        <span><i class="fa-brands fa-css3-alt fa-xl" style="color: #0d0ada;"></i>CSS3</span>
+                        <span><i class="fa-brands fa-js fa-xl" style="color: #fbff00;"></i>Java Script</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Cross-browser scroll animation script -->
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>
